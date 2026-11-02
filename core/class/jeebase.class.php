@@ -89,7 +89,7 @@ class jeebase extends eqLogic {
 		$zibase->deregisterListener(config::byKey('locale_ip', 'jeebase'));	
 	}	
 	
-    public function setInfoToJeedom($_options) {
+    public static function setInfoToJeedom($_options) {
 		$eqLogic = jeebase::byLogicalId( $_options['id'],  'jeebase') ;	
 		if ( is_object($eqLogic) ) {
 			if (isset($_options['flag1']) && $_options['flag1'] == "Alarm") {
@@ -167,7 +167,7 @@ class jeebase extends eqLogic {
 		}
 	}
 
-	public function setStateToJeedom($_options) {
+	public static function setStateToJeedom($_options) {
 		$jeebase = jeebase::byLogicalId( $_options['id'],  'jeebase') ;
 	 	if ( is_object($jeebase) ) {
 			$changed = false;
